@@ -1,0 +1,65 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Installing ARM Sourcery G++ Lite</title><link rel="stylesheet" href="cs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"><link rel="start" href="index.html" title="ARM Sourcery G++ Lite"><link rel="up" href="chap-installation.html" title="Chapter 4. Installation and Configuration"><link rel="prev" href="ch04s03.html" title="Downloading an Installer"><link rel="next" href="ch04s05.html" title="Setting up the Environment"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Installing ARM Sourcery G++ Lite</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04s03.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Installation and Configuration</th><td width="20%" align="right"> <a accesskey="n" href="ch04s05.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sec-installing"></a>Installing ARM Sourcery G++ Lite</h2></div></div></div><p>
+   The method used to install ARM Sourcery G++ Lite depends on your host system.
+  </p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id313427"></a>Installing ARM Sourcery G++ Lite on Microsoft Windows</h3></div></div></div><p>
+    If you have received ARM Sourcery G++ Lite on CD, insert the CD in your computer.
+    On most computers, the installer will start automatically.  If
+    your computer has been configured not to automatically run CDs,
+    open <span class="guilabel">My Computer</span>, and double click on the CD.
+    If you downloaded ARM Sourcery G++ Lite, double-click on the installer.
+   </p><p>
+    After the installer starts, follow the on-screen dialogs to
+    install ARM Sourcery G++ Lite.
+   </p><p>
+    Some versions of ARM Sourcery G++ Lite include the Eclipse Integrated Development
+    Environment.  Because Eclipse is an optional component, the
+    installer will allow you to choose whether or not to install it.
+    Eclipse is a Java application, so it requires the Java Runtime
+    Environment (JRE).   The Java Runtime Environment is available at
+    no charge from <a href="http://java.sun.com/j2se/" target="_top">Sun
+    Microsystems Java website</a>.  You may download either the
+    Java Runtime Environment (JRE) or the Java Development Kit (JDK).
+    (The JDK includes the JRE.)
+   </p><div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Caution</h3><p>
+     You should install the JRE before you install ARM Sourcery G++ Lite so that
+     ARM Sourcery G++ Lite can automatically determine the location of your JRE.  If
+     you do not install the JRE first, Eclipse may not be able to find the
+     JRE.  In this case, you may reinstall ARM Sourcery G++ Lite, or you may manually
+     modify your installation as follows.  Navigate the
+     <span class="guimenu">Start</span> until you find the <span class="guimenuitem">ARM Sourcery G++ Lite
+     IDE</span>.  Right click on <span class="guimenuitem">ARM Sourcery G++ Lite
+     IDE</span> and select
+     <span class="guimenuitem">Properties</span>.  Click the
+     <span class="guilabel">Shortcut</span> tab and click in the 
+     <span class="guilabel">Target</span> field.  Press the
+     <span><strong class="keycap">End</strong></span> key to move to the end of the field and adjust
+     the path for <code class="filename">javaw</code> to contain the full path
+     to the directory in which your JRE was installed.  If you accepted
+     the default installation directory, the correct value will be 
+     similar to
+     <code class="filename">C:\Program Files\Java\jre1.5.0_06\bin\javaw</code>.
+     The entire path name should be enclosed in quotation marks.
+    </p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="tbz2inst"></a>Installing ARM Sourcery G++ Lite on GNU/Linux or Solaris</h3></div></div></div><p>
+   You do not need to be a system administrator to install ARM Sourcery G++ Lite on a
+   GNU/Linux or Solaris system.  You may install ARM Sourcery G++ Lite using any user
+   account and in any directory to which you have
+   write access.  This guide assumes that you have decided to install
+   ARM Sourcery G++ Lite in the <code class="filename">codesourcery</code> subdirectory of
+   your home directory and that the filename of the package you have
+   downloaded is <code class="filename">/path/to/package.tar.bz2</code>.
+  </p><p>
+   First, uncompress the package file:
+   </p><pre class="screen">&gt; bunzip2 /path/to/package.tar.bz2</pre><p>
+   Next, create the directory in which you wish to install the package:
+   </p><pre class="screen">&gt; mkdir -p $HOME/codesourcery</pre><p>
+   Change to the installation directory:
+   </p><pre class="screen">&gt; cd $HOME/codesourcery</pre><p>
+   Unpack the package:
+   </p><pre class="screen">&gt; tar xf /path/to/package.tar</pre><p>
+  </p><p>
+    This will have created a subdirectory called
+    <code class="filename">sourceryg++-4.1</code> or similar.  If you are
+    installing a native toolchain, it is then necessary to run a
+    post-install script found in the <code class="filename">share</code>
+    directory:
+    </p><pre class="screen">&gt; sourceryg++-4.1/share/postinst-*</pre><p>
+  </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04s03.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="chap-installation.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04s05.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Downloading an Installer </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Setting up the Environment</td></tr></table></div></body></html>

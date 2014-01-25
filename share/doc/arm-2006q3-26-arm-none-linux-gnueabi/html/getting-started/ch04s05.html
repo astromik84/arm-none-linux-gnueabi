@@ -1,0 +1,71 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Setting up the Environment</title><link rel="stylesheet" href="cs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"><link rel="start" href="index.html" title="ARM Sourcery G++ Lite"><link rel="up" href="chap-installation.html" title="Chapter 4. Installation and Configuration"><link rel="prev" href="sec-installing.html" title="Installing ARM Sourcery G++ Lite"><link rel="next" href="chap-eclipse.html" title="Chapter 5. Using ARM Sourcery G++ Lite with Eclipse"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Setting up the Environment</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="sec-installing.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Installation and Configuration</th><td width="20%" align="right"> <a accesskey="n" href="chap-eclipse.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id331966"></a>Setting up the Environment</h2></div></div></div><p>
+   As with the installation process itself, the steps required to set
+   up your environment depend on your host operating system.  The name
+   of the ARM Sourcery G++ Lite commands all begin with <span><strong class="command">arm-none-linux-gnueabi</strong></span>
+   so that you can install ARM Sourcery G++ Lite for multiple target systems in the
+   same directory.
+ </p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id331984"></a>Setting up the Environment on Microsoft Windows</h3></div></div></div><p>
+    The installer automatically adds ARM Sourcery G++ Lite to your <code class="envar">PATH</code>.
+    You can test that your <code class="envar">PATH</code> is set up correctly by
+    using the following command:
+    </p><pre class="screen">&gt; arm-none-linux-gnueabi-g++</pre><p>
+    and verifying that you receive the message:
+    </p><pre class="screen">arm-none-linux-gnueabi-g++.exe: no input files</pre><p>
+   </p><div class="section" lang="en"><div class="titlepage"><div><div><h4 class="title"><a name="id332012"></a>Working with Cygwin</h4></div></div></div><p>
+     ARM Sourcery G++ Lite does not require Cygwin or any other UNIX emulation
+     environment.  You can use ARM Sourcery G++ Lite directly from the Eclipse IDE or
+     from the Windows command shell.  You can also use ARM Sourcery G++ Lite from
+     within the Cygwin environment, if you prefer.
+    </p><p>
+     The Cygwin emulation environment translates Windows path names
+     into UNIX path names.  For example, the Cygwin path 
+     <code class="filename">/home/user/hello.c</code> corresponds to the 
+     Windows path <code class="filename">c:\cygwin\home\user\hello.c</code>.
+     Because ARM Sourcery G++ Lite is not a Cygwin application, it does not, by
+     default, recognize Cygwin paths.
+    </p><p>
+     If you are using ARM Sourcery G++ Lite from Cygwin, you should set the
+     <code class="envar">CYGPATH</code> environment variable.  If this environment
+     variable is set, ARM Sourcery G++ Lite will automatically translate Cygwin path
+     names into Windows path names.  To set this environment
+     variable, type the following command in a Cygwin shell:
+     </p><pre class="screen">&gt; export CYGPATH=</pre><p>
+
+     To resolve Cygwin path names, ARM Sourcery G++ Lite relies on the
+     <span><strong class="command">cygpath</strong></span> utility provided with Cygwin.  You
+     must provide ARM Sourcery G++ Lite with the full path to
+     <code class="filename">cygpath</code> if <span><strong class="command">cygpath</strong></span> is not
+     in your <code class="envar">PATH</code>.  For example: 
+     </p><pre class="screen">&gt; export CYGPATH=/path/to/cygpath</pre><p>
+     will direct ARM Sourcery G++ Lite to use <code class="filename">/path/to/cygpath</code>
+     as the path conversion utility.
+    </p></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id332096"></a>Setting up the Environment on GNU/Linux or Solaris</h3></div></div></div><p>
+    Before using ARM Sourcery G++ Lite you should add ARM Sourcery G++ Lite to your
+    <code class="envar">PATH</code>.  The command you must use varies with the
+    particular command shell that you are using.  If you are using the
+    C Shell (<span><strong class="command">csh</strong></span> or <span><strong class="command">tcsh</strong></span>), use
+    the command:
+   </p><pre class="screen">&gt; setenv PATH $HOME/CodeSourcery/Sourcery_G++/bin:$PATH</pre><p>
+    If you are using Bourne Shell (<span><strong class="command">sh</strong></span>), the Korn
+    Shell (<span><strong class="command">ksh</strong></span>), or another shell, use:
+   </p><pre class="screen">&gt; export PATH=$HOME/CodeSourcery/Sourcery_G++/bin:$PATH</pre><p>
+    If you are not sure which shell you are using, try both commands.
+    In both cases, if you have installed ARM Sourcery G++ Lite in an alternate
+    location, you must replace the directory above with
+    <code class="filename">bin</code> subdirectory of the directory in which
+    you installed ARM Sourcery G++ Lite.
+   </p><p>
+    You may also wish to set the <code class="envar">MANPATH</code> environment
+    variable so that you can access the ARM Sourcery G++ Lite manual pages, which
+    provide additional information about using ARM Sourcery G++ Lite.  To set the
+    <code class="envar">MANPATH</code> environment variable, follow the same steps
+    shown above, replacing <code class="envar">PATH</code> with
+    <code class="envar">MANPATH</code>, and <code class="filename">bin</code> with
+    <code class="filename">man</code>.
+   </p><p>
+    You can test that your <code class="envar">PATH</code> is set up correctly by
+    using the following command:
+    </p><pre class="screen">&gt; arm-none-linux-gnueabi-g++</pre><p>
+    and verifying that you receive the message:
+    </p><pre class="screen">arm-none-linux-gnueabi-g++: no input files</pre><p>
+   </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="sec-installing.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="chap-installation.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="chap-eclipse.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Installing ARM Sourcery G++ Lite </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 5. Using ARM Sourcery G++ Lite with Eclipse</td></tr></table></div></body></html>

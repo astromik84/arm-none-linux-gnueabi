@@ -1,0 +1,27 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Running an Application</title><link rel="stylesheet" href="cs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"><link rel="start" href="index.html" title="ARM Sourcery G++ Lite"><link rel="up" href="chap-building.html" title="Chapter 6. Using Sourcery G++ from the Command Line"><link rel="prev" href="chap-building.html" title="Chapter 6. Using Sourcery G++ from the Command Line"><link rel="next" href="gpl.html" title="Appendix A. GNU General Public License"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Running an Application</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="chap-building.html">Prev</a> </td><th width="60%" align="center">Chapter 6. Using Sourcery G++ from the Command Line</th><td width="20%" align="right"> <a accesskey="n" href="gpl.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id289382"></a>Running an Application</h2></div></div></div><p>
+   If the target system is the same as the host system (e.g., if you
+   are running ARM Sourcery G++ Lite on IA32 GNU/Linux to build an application for
+   IA32 GNU/Linux), then you can just run the resulting
+   application.  On a Microsoft Windows system, you may use the 
+   command:
+   </p><pre class="screen">&gt; hello</pre><p>
+   On a GNU/Linux or Solaris system, use the slightly more complex:
+   </p><pre class="screen">&gt; ./hello</pre><p>
+   command.  In either case, you should see:
+   </p><pre class="screen">Hello world!</pre><p>
+  </p><p>
+   If the target system is not the same as the host system, then you
+   cannot run the application directly.  Instead, you will have to run
+   the application on the target system.  You should consult the
+   manuals for your target system to determine the exact procedures
+   required to run the application.
+  </p><p>
+   On some systems, ARM Sourcery G++ Lite includes a simulator that can be used to run
+   the program. To use the simulator run:
+   </p><pre class="screen">&gt; arm-none-linux-gnueabi-run hello</pre><p>
+   The simulator is available if you see the expected output:
+   </p><pre class="screen">Hello, world!</pre><p>
+   There is no simulator for your target system if you see a message like:
+   </p><pre class="screen">'arm-none-linux-gnueabi-run' is not recognized as an internal or external command</pre><p>
+   or: </p><pre class="screen">arm-none-linux-gnueabi-run: command not found</pre><p>
+  </p></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="chap-building.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="chap-building.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="gpl.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 6. Using Sourcery G++ from the Command Line </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Appendix A. GNU General Public License</td></tr></table></div></body></html>

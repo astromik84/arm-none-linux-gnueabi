@@ -1,0 +1,109 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>ARM Release Notes</title><link rel="stylesheet" href="cs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"><link rel="start" href="index.html" title="ARM Sourcery G++ Lite"><link rel="up" href="chap-release.html" title="Chapter 3. ARM Sourcery G++ Lite for ARM GNU/Linux"><link rel="prev" href="ch03s02.html" title="ARM Sourcery G++ Lite Release Notes"><link rel="next" href="chap-installation.html" title="Chapter 4. Installation and Configuration"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">ARM Release Notes</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch03s02.html">Prev</a> </td><th width="60%" align="center">Chapter 3. ARM Sourcery G++ Lite for ARM GNU/Linux</th><td width="20%" align="right"> <a accesskey="n" href="chap-installation.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id347545"></a>ARM Release Notes</h2></div></div></div><p>
+    This section documents ARM related changes for each released revision.
+  </p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id344747"></a>Changes in ARM Sourcery G++ Lite 4.1-23</h3></div></div></div><p><b>Stellaris USB Debug Sprite Improvements. </b>
+      The former USB Debug Stub, <span><strong class="command">armswd</strong></span>, is now known as
+      the USB Debug Sprite, and has been renamed to
+      <span><strong class="command">arm-stellaris-eabi-sprite</strong></span>.  In addition, its
+      initialization sequence has been updated to recognize the r1p1 
+      release of the Cortex-M3 processor.
+    </p><p><b>Incompatible Changes to Stellaris Linker Scripts. </b>
+      ARM Sourcery G++ Lite now supports linking executables to run from RAM as well
+      as ROM.  As part of this change, there are now separate RAM and ROM
+      versions of the linker scripts for each supported board, and the former
+      ROM-based versions have been renamed.  For example, if you were 
+      formerly linking with <code class="option">-T lm3s10x.ld</code>, you should now use
+      <code class="option">-T lm3s10x-rom.ld</code> to get the same behavior.
+    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id348495"></a>Changes in ARM Sourcery G++ Lite 4.1-21</h3></div></div></div><p><b>Eclipse Debuggers. </b>
+      Eclipse configurations for debugging arm-none-eabi applications
+      using the GDB simulator and remote debug stubs have been added.
+    </p><p><b>iWMMXt2 Support. </b>
+      The assembler and disassembler now support iWMMXt2
+      instructions.
+    </p><p><b>NEON Intrinsics Support. </b>
+      GCC now supports NEON intrinsics defined in the
+      <code class="filename">arm_neon.h</code> header.
+      These are the same intrinsics supported by the ARM RVCT
+      compiler and are documented in the 'ARM NEON Intrinsics'
+      section of the GCC manual.
+    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id390909"></a>Changes in ARM Sourcery G++ Lite 4.1-19</h3></div></div></div><p><b>ARMv4t linux multilib. </b>
+      Linux configurations now support ARMv4t CPUs.
+    </p><p><b>Linker scripts. </b>
+      Several problems with the linker scripts for bare-metal targets have
+      been fixed.
+    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id330298"></a>Changes in ARM Sourcery G++ Lite 4.1-18</h3></div></div></div><p><b>NEON Compiler Support. </b>
+      Initial GCC support for autovectorization and generation
+      of NEON SIMD instructions has been added.
+    </p><p><b>Bare Metal Cortex-M3 Configurations. </b>
+      Bare metal configurations now support generating images for
+      use on ARMv7M devices (eg. Cortex-M3).
+    </p><p><b>iWMMXt support in GLIBC. </b>
+      GLIBC's <code class="function">setjmp</code> and
+      <code class="function">longjmp</code> now support saving and restoring
+      iWMMXt registers on hardware with those registers.  This
+      requires a kernel reporting
+      <code class="computeroutput">iwmmxt</code> in the
+      <code class="computeroutput">Features</code> entry in
+      <code class="filename">/proc/cpuinfo</code>.
+    </p><p><b>iWMMXt exception handling support. </b>
+      Exception handling now restores the values of iWMMXt registers
+      correctly.
+    </p><p><b>Corrected IPC functions. </b>
+      A bug in GLIBC's <code class="function">msgctl</code>,
+      <code class="function">semctl</code>, and <code class="function">shmctl</code>
+      functions has been corrected.
+    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id350468"></a>Changes in ARM Sourcery G++ Lite 4.1-16</h3></div></div></div><p><b>Stack permission marking for ARM GNU/Linux. </b>
+      Non-executable stacks can provide increased security against some forms
+      of "buffer overflow" attacks. The tools involved must coordinate the
+      annotation of required stack permissions, either executable, or
+      non-executable.
+      For ARM GNU/Linux targets the compiler now outputs annotations indicating the 
+      required stack permissions.
+    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id362507"></a>Changes in ARM Sourcery G++ Lite 4.1-15</h3></div></div></div><p><b>Stabs Debugging Information Support. </b>
+      Using the Stabs debugging format (available with <code class="option">-gstabs</code> or 
+      <code class="option">-gstabs+</code>) now works in conjunction with <code class="option">-mthumb</code>.  
+      CodeSourcery recommends the default DWARF debugging format (available with -g)
+      as DWARF is a more comprehensive debugging format. 
+    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id350482"></a>Changes in ARM Sourcery G++ Lite 4.1-13</h3></div></div></div><p><b>Stellaris Linker Scripts in IDE. </b>
+      Linker scripts may now be selected via a drop-down menu in
+      Eclipse. 
+    </p><p><b>Stellaris Linker Scripts for 3xx Series CPUs. </b>
+      The linker scripts for 3xx Series CPUs now place the ISR vector
+      at address zero, as required by all Cortex-M3 cores.
+    </p><p><b>Stellaris USB Debug Stub Improvements. </b>
+      Bug fixes and new features include:
+      </p><div class="itemizedlist"><ul type="disc"><li>
+        A bug that caused the stub not to correctly update the program counter 
+        and other register values was fixed.  As a result of this fix, it is 
+        now possible to run programs residing in SRAM using the
+        <code class="literal">continue</code> command from GDB.
+      </li><li>
+        The stub no longer prints status messages via GDB console
+        output when invoked with the <code class="option">-q</code> command-line option.  
+      </li><li>
+        The stub's initialization sequence was updated to recognize revision C
+        Cortex-M3 hardware.  
+      </li></ul></div><p>
+    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id354277"></a>Changes in ARM Sourcery G++ Lite 4.1-9</h3></div></div></div><p><b>Stellaris USB Debug Stub Improvements. </b>
+     Program images exceeding 4K can now be uploaded to flash memory.
+    </p><p><b>Additional Stellaris Boards Supported. </b>
+      The Stellaris 301, 310, 315, and 316 CPUs are now supported.
+      Linker scripts have been added for these boards.
+    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id331817"></a>Changes in ARM Sourcery G++ Lite 4.1-8</h3></div></div></div><p><b>Stellaris USB Debug Stub Improvements. </b>
+      Several bug fixes and enhancements were made to the USB Debug Stub.
+      In particular:
+      </p><div class="itemizedlist"><ul type="disc"><li>
+          Bugs in the implementation of <code class="function">open</code>,
+ 	  <code class="function">read</code>, and <code class="function">lseek</code> were
+  	  fixed.
+        </li><li>
+          Support was added for <code class="function">isatty</code>,
+          <code class="function">rename</code>, <code class="function">unlink</code>, and
+          <code class="function">system</code>.
+        </li><li>
+          Memory reads that span 4K block boundaries now work correctly.
+        </li></ul></div><p>
+    </p></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id297786"></a>Changes in ARM Sourcery G++ Lite 4.1-4</h3></div></div></div><p><b>Runtime Libraries. </b>
+      Support for ARMv7 including Cortex-M3 and pure Thumb-2. 
+    </p><p><b>Assembler. </b>
+      Support for NEON and VFPv3, including unified NEON/VFP syntax.
+    </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch03s02.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="chap-release.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="chap-installation.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">ARM Sourcery G++ Lite Release Notes </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 4. Installation and Configuration</td></tr></table></div></body></html>

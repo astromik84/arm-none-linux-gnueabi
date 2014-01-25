@@ -1,0 +1,37 @@
+@import url("http://www.codesourcery.com/codesourcerystyles.css");
+
+body {
+  /* The CodeSourcery stylesheet sets the margin for the body to 0px, but
+     here we do not have the same graphical elements.  */
+  width: 70%;
+  margin: 8px 15% 8px 15%;
+}
+
+pre.programlisting
+{
+  font-size: smaller;
+  border: 1px solid #aaaaaa;
+  background-color: #eeeeee;
+  margin: 20px;
+  padding: 10px;
+}
+
+/* This is the same style used for ".code" in the CodeSourcery 
+   stylesheet.  */
+.guiicon,.guilabel,.guibutton,.guimenu,.guisubmenu,.guimenuitem {
+  font-family: "Courier New", Courier, mono;
+  font-size: 11px;
+  line-height: 15px;
+  color: #000000;
+}
+
+/* Use default monospaced font without changing face or size for type
+   and structname, to match handling of function, varname, etc.  */
+.type,.structname {
+  font-family: monospace;
+}
+
+.remark
+{ 
+  color: #ff0000;
+}

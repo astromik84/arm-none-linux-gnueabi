@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+<title>Supported Configurations - The GNU C Library</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="The GNU C Library">
+<meta name="generator" content="makeinfo 4.8">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Installation.html#Installation" title="Installation">
+<link rel="prev" href="Tools-for-Compilation.html#Tools-for-Compilation" title="Tools for Compilation">
+<link rel="next" href="Linux.html#Linux" title="Linux">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Supported-Configurations"></a>
+Next:&nbsp;<a rel="next" accesskey="n" href="Linux.html#Linux">Linux</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Tools-for-Compilation.html#Tools-for-Compilation">Tools for Compilation</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Installation.html#Installation">Installation</a>
+<hr>
+</div>
+
+<h3 class="appendixsec">C.4 Supported Configurations</h3>
+
+<p><a name="index-configurations_002c-all-supported-3810"></a>
+The GNU C Library currently supports configurations that match the
+following patterns:
+
+<pre class="smallexample">     alpha<var>*</var>-<var>*</var>-linux
+     arm-<var>*</var>-linux
+     cris-<var>*</var>-linux
+     hppa-<var>*</var>-linux
+     i<var>x</var>86-<var>*</var>-gnu
+     i<var>x</var>86-<var>*</var>-linux
+     ia64-<var>*</var>-linux
+     m68k-<var>*</var>-linux
+     mips<var>*</var>-<var>*</var>-linux
+     powerpc-<var>*</var>-linux
+     s390-<var>*</var>-linux
+     s390x-<var>*</var>-linux
+     sparc-<var>*</var>-linux
+     sparc64-<var>*</var>-linux
+     x86_64-<var>*</var>-linux
+</pre>
+   <p>Former releases of this library (version 2.1 and/or 2.0) used to run on
+the following configurations:
+
+<pre class="smallexample">     arm-<var>*</var>-linuxaout
+     arm-<var>*</var>-none
+</pre>
+   <p>Very early releases (version 1.09.1 and perhaps earlier versions) used
+to run on the following configurations:
+
+<pre class="smallexample">     alpha-dec-osf1
+     alpha-<var>*</var>-linuxecoff
+     i<var>x</var>86-<var>*</var>-bsd4.3
+     i<var>x</var>86-<var>*</var>-isc2.2
+     i<var>x</var>86-<var>*</var>-isc3.<var>n</var>
+     i<var>x</var>86-<var>*</var>-sco3.2
+     i<var>x</var>86-<var>*</var>-sco3.2v4
+     i<var>x</var>86-<var>*</var>-sysv
+     i<var>x</var>86-<var>*</var>-sysv4
+     i<var>x</var>86-force_cpu386-none
+     i<var>x</var>86-sequent-bsd
+     i960-nindy960-none
+     m68k-hp-bsd4.3
+     m68k-mvme135-none
+     m68k-mvme136-none
+     m68k-sony-newsos3
+     m68k-sony-newsos4
+     m68k-sun-sunos4.<var>n</var>
+     mips-dec-ultrix4.<var>n</var>
+     mips-sgi-irix4.<var>n</var>
+     sparc-sun-solaris2.<var>n</var>
+     sparc-sun-sunos4.<var>n</var>
+</pre>
+   <p>Since no one has volunteered to test and fix these configurations,
+they are not supported at the moment.  They probably don't compile;
+they definitely don't work anymore.  Porting the library is not hard. 
+If you are interested in doing a port, please contact the glibc
+maintainers.  Start at <a href="http://www.gnu.org/software/libc/">http://www.gnu.org/software/libc/</a> and
+read the references there on how to go about getting involved and
+contacting the developers.
+
+   <p>Valid cases of `<samp><span class="samp">i</span><var>x</var><span class="samp">86</span></samp>' include `<samp><span class="samp">i386</span></samp>', `<samp><span class="samp">i486</span></samp>',
+`<samp><span class="samp">i586</span></samp>', and `<samp><span class="samp">i686</span></samp>'.  All of those configurations produce a
+library that can run on this processor and newer processors.  The GCC
+compiler by default generates code that's optimized for the machine it's
+configured for and will use the instructions available on that machine. 
+For example if your GCC is configured for `<samp><span class="samp">i686</span></samp>', gcc will optimize
+for `<samp><span class="samp">i686</span></samp>' and might issue some `<samp><span class="samp">i686</span></samp>' specific instructions. 
+To generate code for other models, you have to configure for that model
+and give GCC the appropriate `<samp><span class="samp">-march=</span></samp>' and `<samp><span class="samp">-mcpu=</span></samp>' compiler
+switches via <var>CFLAGS</var>.
+
+   </body></html>
+

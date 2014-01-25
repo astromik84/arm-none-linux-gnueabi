@@ -1,0 +1,78 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Debugging Applications</title><link rel="stylesheet" href="cs.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.69.1"><link rel="start" href="index.html" title="ARM Sourcery G++ Lite"><link rel="up" href="chap-eclipse.html" title="Chapter 5. Using ARM Sourcery G++ Lite with Eclipse"><link rel="prev" href="ch05s02.html" title="Building Applications"><link rel="next" href="ch05s04.html" title="Learning More About Eclipse"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Debugging Applications</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch05s02.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Using ARM Sourcery G++ Lite with Eclipse</th><td width="20%" align="right"> <a accesskey="n" href="ch05s04.html">Next</a></td></tr></table><hr></div><div class="section" lang="en"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="sec-eclipse-debug"></a>Debugging Applications</h2></div></div></div><p>
+  </p><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id301470"></a>Choosing a Debugging Mode</h3></div></div></div><p>
+    Before you can use Eclipse to debug your application, you must
+    decide which debugging mode to use.   The debugging mode to use
+    depends on your choice of target system, and, in some cases, on
+    the way that you have built your application.
+   </p><p>
+    ARM Sourcery G++ Lite supports several debugging modes, as described below.  Some
+    modes are available only in certain versions of ARM Sourcery G++ Lite, so there
+    may be modes listed in this section that are not available to you.
+   </p><div class="variablelist"><dl><dt><span class="term">External Embedded Server (RAM)</span></dt><dd><p>
+       The External Embedded Server (RAM) mode is designed for use with target systems that
+       have no operating system support for debugging.  In the Embedded 
+       mode, ARM Sourcery G++ Lite connects to a "GDB stub" running on
+       either the target system or on a host system.  You must start
+       the stub manually.
+      </p><p>
+       When you debug your application in the Embedded mode, Eclipse
+       will load the application on your target system, set the
+       program counter to the address of the
+       <code class="function">_start</code> function, and then begin
+       execution.
+      </p></dd><dt><span class="term">External Embedded Server (ROM)</span></dt><dd><p>
+       The External Embedded Server (ROM) mode is like the External
+       Embedded Server (RAM) mode, but should be used for
+       applications that are stored in ROM (or flash memory) on the
+       target system.  In this mode, ARM Sourcery G++ Lite will use hardware
+       breakpoints, since the program image cannot be modified.
+       Therefore, there will probably be a limit on the total 
+       number of breakpoints you can create.
+      </p><p>
+       Some debugger operations (such as stepping over a function
+       call) will not work correctly in the ROM mode because the
+       debugger is unable to set software breakpoints.
+      </p></dd><dt><span class="term">External Server</span></dt><dd><p>
+       On UNIX-like operating systems (including GNU/Linux) ARM Sourcery G++ Lite
+       includes a program called <span><strong class="command">gdbserver</strong></span> which
+       can be used for remote debugging.  The Server mode allows you
+       to connect to an already-executing
+       <span><strong class="command">gdbserver</strong></span>.
+      </p></dd><dt><span class="term">Simulator</span></dt><dd><p>
+       In the Simulator mode, ARM Sourcery G++ Lite will use the instruction-set
+       simulator provided with ARM Sourcery G++ Lite.  You do not need target
+       hardware in order to use this mode.
+      </p></dd><dt></dt><dd></dd></dl></div></div><div class="section" lang="en"><div class="titlepage"><div><div><h3 class="title"><a name="id290873"></a>Starting the Debugger</h3></div></div></div><p>
+     After you build your application, choose
+     <span class="guimenuitem">Debug...</span> from the <span class="guimenu">Run</span>
+     menu.  Select the <span class="guilabel">C/C++ Local Application</span> 
+     label in the <span class="guilabel">Configurations</span> pane. Take a moment
+     to read through icons and their meanings. Click the left-most icon
+     described as the <span class="guilabel">New launch configuration</span> or 
+     <span class="guilabel">New</span> button. The following figure shows the icon
+     highlighted in yellow.
+
+     </p><div class="figure"><a name="id290918"></a><p class="title"><b>Figure 5.1. New launch configuration selection</b></p><div class="mediaobject" align="center"><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="100%"><tr><td align="center"><img src="images/chap-eclipse-debug-new.png" align="middle" width="100%" alt="New launch configuration selection"></td></tr></table></div></div><p>
+   </p><p>
+     On the <span class="guilabel">Main</span> tab, use the
+     <span class="guibutton">Browse</span> button to select your project, if it
+     is not already selected.  Use the <span class="guibutton">Search
+     Project..</span> button to select your application.  Then,
+     switch to the <span class="guilabel">Debugger</span> tab.  Select the ARM Sourcery G++ Lite
+     debugger appropriate for your target, and adjust the settings
+     as required.  
+   </p><p>
+     Some debuggers offer a <span class="guilabel">Connection</span> tab, 
+     accessible from the <span class="guilabel">Debugger</span> tab.
+     The <span class="guilabel">Connection</span> tab controls how the debugger 
+     connects to the target. The default connection is set to the first 
+     serial port. Adjust this setting to suit your environment; 
+     options include <span class="guimenu">TCP/IP</span> and <span class="guimenu">Serial</span>.
+   </p><p>
+     To start debugging, click the <span class="guibutton">Debug</span> button.
+   </p><p>
+    You do not need to repeat this process the next time you launch the
+    debugger.  Instead, you can select <span class="guimenuitem">Debug Last
+    Launched</span> from the <span class="guimenu">Run</span> menu to
+    start the debugger.
+   </p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch05s02.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="chap-eclipse.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch05s04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Building Applications </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Learning More About Eclipse</td></tr></table></div></body></html>
